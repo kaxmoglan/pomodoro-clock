@@ -91,6 +91,8 @@ function App() {
         setDisableControls={setDisableControls}
         timer={timer}
         setTimer={setTimer}
+        clock={clock}
+        setClock={setClock}
       />
     </>
   );
