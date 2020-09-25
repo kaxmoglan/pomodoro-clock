@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Timer = (props) => {
-  const timer = props.timer;
+  const { time, setTime, disableControls, timer } = props;
+
   // HANDLERS
   const handleIncrement = () => {
-    if (props.time < 60) {
-      props.setTime(props.time + 1);
+    if (time < 60) {
+      setTime((x) => x + 1);
     }
   };
 
   const handleDecrement = () => {
-    if (props.time > 1) {
-      props.setTime(props.time - 1);
+    if (time > 1) {
+      setTime((x) => x - 1);
     }
   };
 
   return (
-    <div className={`settings disableControls_${props.disableControls}`}>
+    <div className={`settings disableControls_${disableControls}`}>
       <div className="length-control">
         <h2 id={timer.label.id}>{timer.label.title}</h2>
         <button id={timer.control1.id} onClick={handleDecrement}>

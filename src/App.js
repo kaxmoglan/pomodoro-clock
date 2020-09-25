@@ -46,6 +46,7 @@ function App() {
   const [clock, setClock] = useState(1500);
   const [disableControls, setDisableControls] = useState(false);
   const [timer, setTimer] = useState("25:00");
+  const [loop, setLoop] = useState();
 
   // USE EFFECTS
   // set clock in seconds as session time changes
@@ -53,23 +54,16 @@ function App() {
     setClock(sessionTime * 60);
   }, [sessionTime]);
 
-  // set clock in seconds to relevant timer when timer type changes
-  useEffect(() => {
-    if (timerType === "Session") {
-      setClock(sessionTime * 60);
-    } else if (timerType === "Break") {
-      setClock(breakTime * 60);
-    }
-  }, [timerType]);
-
   // RENDER
   return (
     <>
+      <h1>Pomodoro Clock</h1>
       <Timer
         time={sessionTime}
         setTime={setSessionTime}
         timer={timers.sessionTimer}
         disableControls={disableControls}
+        setClock={setClock}
       />
       <Timer
         time={breakTime}
@@ -77,6 +71,7 @@ function App() {
         timer={timers.breakTimer}
         disableControls={disableControls}
         setDisableControls={setDisableControls}
+        setClock={setClock}
       />
       <Clock
         sessionTime={sessionTime}
@@ -93,6 +88,8 @@ function App() {
         setTimer={setTimer}
         clock={clock}
         setClock={setClock}
+        loop={loop}
+        setLoop={setLoop}
       />
     </>
   );
