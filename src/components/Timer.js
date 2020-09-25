@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const Timer = (props) => {
   const { time, setTime, disableControls, timer } = props;
@@ -18,12 +18,16 @@ const Timer = (props) => {
 
   return (
     <div className={`settings disableControls_${disableControls}`}>
-      <div className="length-control">
-        <h2 id={timer.label.id}>{timer.label.title}</h2>
+      <h2 className="labels" id={timer.label.id}>
+        {timer.label.title}
+      </h2>
+      <div className="interface">
         <button id={timer.control1.id} onClick={handleDecrement}>
           <i className="fas fa-minus"></i>
         </button>
-        <div id={timer.display.id}>{props.time}</div>
+        <div className="timer-setting" id={timer.display.id}>
+          {props.time}
+        </div>
         <button id={timer.control2.id} onClick={handleIncrement}>
           <i className="fas fa-plus"></i>
         </button>

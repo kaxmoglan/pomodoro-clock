@@ -58,39 +58,39 @@ function App() {
   return (
     <>
       <h1>Pomodoro Clock</h1>
-      <Timer
-        time={sessionTime}
-        setTime={setSessionTime}
-        timer={timers.sessionTimer}
-        disableControls={disableControls}
-        setClock={setClock}
-      />
-      <Timer
-        time={breakTime}
-        setTime={setBreakTime}
-        timer={timers.breakTimer}
-        disableControls={disableControls}
-        setDisableControls={setDisableControls}
-        setClock={setClock}
-      />
-      <Clock
-        sessionTime={sessionTime}
-        setSessionTime={setSessionTime}
-        breakTime={breakTime}
-        setBreakTime={setBreakTime}
-        timerType={timerType}
-        setTimerType={setTimerType}
-        running={running}
-        setRunning={setRunning}
-        disableControls={disableControls}
-        setDisableControls={setDisableControls}
-        timer={timer}
-        setTimer={setTimer}
-        clock={clock}
-        setClock={setClock}
-        loop={loop}
-        setLoop={setLoop}
-      />
+      <div id="pomodoro-container">
+        <Clock
+          sessionTime={sessionTime}
+          setSessionTime={setSessionTime}
+          breakTime={breakTime}
+          setBreakTime={setBreakTime}
+          timerType={timerType}
+          setTimerType={setTimerType}
+          running={running}
+          setRunning={setRunning}
+          disableControls={disableControls}
+          setDisableControls={setDisableControls}
+          clock={clock}
+          setClock={setClock}
+          loop={loop}
+          setLoop={setLoop}
+        />
+        <div className="settings-container">
+          <Timer
+            time={sessionTime}
+            setTime={setSessionTime}
+            timer={timers.sessionTimer}
+            disableControls={disableControls}
+          />
+          <Timer
+            time={breakTime}
+            setTime={setBreakTime}
+            timer={timers.breakTimer}
+            disableControls={disableControls}
+            setDisableControls={setDisableControls}
+          />
+        </div>
+      </div>
     </>
   );
 }

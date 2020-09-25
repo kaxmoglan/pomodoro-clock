@@ -3,8 +3,118 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -webkit-transition: all 150ms ease;
+  -o-transition: all 150ms ease;
+  transition: all 150ms ease;
 }
 
 html {
   font-size: 10px;
+  background: #626364;
+  background: -o-radial-gradient(circle, #4d4d4d 0%, black 100%);
+  background: radial-gradient(circle, #4d4d4d 0%, black 100%);
+  color: #ebebeb;
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4.5rem;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+#pomodoro-container {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 500px;
+  border: 1rem solid #2b2a2a;
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(70, 69, 69, 0.75);
+          box-shadow: 0px 0px 50px 0px rgba(70, 69, 69, 0.75);
+  border-radius: 2rem;
+  padding: 2rem;
+  padding-bottom: 8rem;
+  color: #0bf80b;
+  background: black;
+  position: relative;
+}
+#pomodoro-container .clock::after {
+  content: "";
+  width: 70%;
+  height: 0.2rem;
+  background: #0bf80b;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+#pomodoro-container .clock .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.6rem;
+}
+#pomodoro-container .clock .header i {
+  font-size: 2.8rem;
+}
+#pomodoro-container .clock #time-left {
+  font-size: 8rem;
+}
+#pomodoro-container .controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+#pomodoro-container .controls button {
+  font-size: 3.5rem;
+  background: none;
+  border: none;
+  color: #07e307;
+  margin: 2rem;
+  cursor: pointer;
+}
+#pomodoro-container .controls button:hover {
+  color: #0bf80b;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+#pomodoro-container .settings-container .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1rem 0 1rem 0;
+}
+#pomodoro-container .settings-container .settings .labels {
+  font-size: 1.6rem;
+}
+#pomodoro-container .settings-container .settings .interface {
+  display: grid;
+  grid-template-columns: repeat(3, 4rem);
+}
+#pomodoro-container .settings-container .settings .interface .timer-setting {
+  font-size: 2rem;
+}
+#pomodoro-container .settings-container .settings .interface button {
+  border: none;
+  background: none;
+  color: #07e307;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+#pomodoro-container .settings-container .settings .interface button:hover {
+  color: #24f924;
 }

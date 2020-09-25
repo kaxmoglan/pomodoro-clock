@@ -13,8 +13,6 @@ const Clock = (props) => {
     setRunning,
     disableControls,
     setDisableControls,
-    timer,
-    setTimer,
     clock,
     setClock,
     loop,
@@ -81,8 +79,12 @@ const Clock = (props) => {
   // RENDER
   return (
     <>
-      <div className="timer">
-        <h2 id="timer-label">{timerType}</h2>
+      <div className="clock">
+        <div className="header">
+          <i className="fab fa-react"></i>
+          <h2 id="timer-label">{timerType}</h2>
+        </div>
+
         <p id="time-left">{timeConverter(clock)}</p>
       </div>
       <div className="controls">
