@@ -45,7 +45,6 @@ function App() {
   const [running, setRunning] = useState(false);
   const [clock, setClock] = useState(1500);
   const [disableControls, setDisableControls] = useState(false);
-  const [timer, setTimer] = useState("25:00");
   const [loop, setLoop] = useState();
 
   // USE EFFECTS
@@ -68,7 +67,6 @@ function App() {
           setTimerType={setTimerType}
           running={running}
           setRunning={setRunning}
-          disableControls={disableControls}
           setDisableControls={setDisableControls}
           clock={clock}
           setClock={setClock}

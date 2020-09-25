@@ -11,15 +11,12 @@ const Clock = (props) => {
     setTimerType,
     running,
     setRunning,
-    disableControls,
     setDisableControls,
     clock,
     setClock,
     loop,
     setLoop,
   } = props;
-
-  // const beep = document.querySelector("#beep");
 
   // HANDLERS
   const handleReset = () => {
@@ -29,6 +26,7 @@ const Clock = (props) => {
     setBreakTime(5);
     setClock(1500);
     setTimerType("Session");
+    setDisableControls(false);
     const beep = document.querySelector("#beep");
     beep.pause();
     beep.currentTime = 0;
@@ -45,6 +43,7 @@ const Clock = (props) => {
       );
     } else if (running === true) {
       setRunning(false);
+      setDisableControls(false);
       setLoop(clearInterval(loop));
     }
   };

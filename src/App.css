@@ -58,6 +58,7 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 1.6rem;
+  color: #07e307;
 }
 #pomodoro-container .clock .header i {
   font-size: 2.8rem;
@@ -97,6 +98,12 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 1rem 0 1rem 0;
+}
+#pomodoro-container .settings-container .settings.disableControls_true .interface,
+#pomodoro-container .settings-container .settings.disableControls_true .labels,
+#pomodoro-container .settings-container .settings.disableControls_true .interface button {
+  color: #036703;
+  pointer-events: none;
 }
 #pomodoro-container .settings-container .settings .labels {
   font-size: 1.6rem;
